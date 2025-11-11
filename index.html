@@ -181,6 +181,169 @@
     }
 
     .chip {
-      padding
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 500;
+    }
 
+    .note {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
 
+    ul.list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .item-role {
+      display: block;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    .hidden { display: none; }
+
+    footer {
+      margin-top: 36px;
+      font-size: 12px;
+      color: var(--text-sub);
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 10px;
+    }
+
+    footer strong { color: var(--text-main); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="eyebrow">FREYAX · TRADEMARK CLASSES 9 · 42 · 44</div>
+      <h1>상표 지정상품 요약 리포트</h1>
+      <p class="subtitle">FreyaX 브랜드를 기준으로, <strong>스마트밴드·앱(9류)</strong>, <strong>데이터 플랫폼(42류)</strong>, <strong>웰니스 서비스(44류)</strong>의 핵심 지정상품을 요약한 페이지입니다.</p>
+    </header>
+
+    <section class="grid-top">
+      <div class="card">
+        <div class="card-title">출원 구조</div>
+        <div class="card-main">2개 상표 · 3개 상품류</div>
+        <div class="card-sub">FreyaX는 고정 출원, 후보 1개 추가. 9/42/44류 동시 출원으로 전체 서비스 보호.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">레이어별 역할</div>
+        <div class="card-main">Device → Data → Service</div>
+        <div class="card-sub">· 9류: 앱/밴드 <br>· 42류: 데이터 분석 플랫폼 <br>· 44류: 웰니스 서비스</div>
+      </div>
+      <div class="card">
+        <div class="card-title">포지셔닝 원칙</div>
+        <div class="card-main">Non-medical</div>
+        <div class="card-sub">비의료 웰니스 중심으로 표현. “진단/치료/처방” 용어는 제외.</div>
+      </div>
+    </section>
+
+    <section class="role-grid">
+      <div class="role-card active" data-target="class9">
+        <div class="role-label">제 9류</div>
+        <div class="role-title">앱 · 스마트밴드</div>
+        <div class="role-text">실제 사용자 단말과 센서 디바이스 보호</div>
+      </div>
+      <div class="role-card" data-target="class42">
+        <div class="role-label">제 42류</div>
+        <div class="role-title">데이터 플랫폼</div>
+        <div class="role-text">서버, 알고리즘, AI 분석 영역 보호</div>
+      </div>
+      <div class="role-card" data-target="class44">
+        <div class="role-label">제 44류</div>
+        <div class="role-title">웰니스 서비스</div>
+        <div class="role-text">가임력·생활습관 코칭 정보 서비스 보호</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header" data-panel="class9">
+        <div class="panel-title">제 9류 – FreyaX 앱·밴드</div>
+        <div class="panel-caption">FreyaX 앱과 스마트밴드, 데이터 수집 소프트웨어 중심.</div>
+      </div>
+      <div class="panel-header hidden" data-panel="class42">
+        <div class="panel-title">제 42류 – 데이터 플랫폼</div>
+        <div class="panel-caption">배란 예측, 데이터 분석, SaaS 알고리즘 플랫폼.</div>
+      </div>
+      <div class="panel-header hidden" data-panel="class44">
+        <div class="panel-title">제 44류 – 웰니스 서비스</div>
+        <div class="panel-caption">임신 준비·생활습관 관리 코칭 서비스.</div>
+      </div>
+
+      <div class="chip-row" data-panel="class9">
+        <span class="chip">생리/배란 관리 앱</span>
+        <span class="chip">스마트밴드</span>
+        <span class="chip">피부온도/심박 센서</span>
+      </div>
+      <div class="chip-row hidden" data-panel="class42">
+        <span class="chip">AI 분석 SaaS</span>
+        <span class="chip">배란 예측 알고리즘</span>
+        <span class="chip">데이터 플랫폼</span>
+      </div>
+      <div class="chip-row hidden" data-panel="class44">
+        <span class="chip">가임력 웰니스 정보</span>
+        <span class="chip">주기 기반 코칭</span>
+        <span class="chip">비의료 건강관리</span>
+      </div>
+
+      <ul class="list" data-panel="class9">
+        <li><span class="item-label">다운로드 앱</span><span class="item-role">생리·배란 관리용 소프트웨어</span></li>
+        <li><span class="item-label">웨어러블 디바이스</span><span class="item-role">수면·활동·스트레스 센서</span></li>
+      </ul>
+
+      <ul class="list hidden" data-panel="class42">
+        <li><span class="item-label">데이터 분석 SaaS</span><span class="item-role">헬스 데이터 분석용 소프트웨어</span></li>
+        <li><span class="item-label">배란 예측 엔진</span><span class="item-role">온라인 비다운로드 소프트웨어</span></li>
+      </ul>
+
+      <ul class="list hidden" data-panel="class44">
+        <li><span class="item-label">웰니스 코칭</span><span class="item-role">가임력 관리·생활습관 가이드</span></li>
+        <li><span class="item-label">온라인 정보제공</span><span class="item-role">비의료 건강관리 서비스</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><strong>Note.</strong> 본 문서는 FreyaX 상표 전략 기획용 초안이며, 특허법인 검토 시 조정될 수 있습니다.</p>
+    </footer>
+  </div>
+
+  <script>
+    const roleCards = document.querySelectorAll(".role-card");
+    const panels = document.querySelectorAll("[data-panel]");
+
+    roleCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const target = card.dataset.target;
+        roleCards.forEach((c) => c.classList.remove("active"));
+        card.classList.add("active");
+
+        panels.forEach((p) => {
+          p.classList.toggle("hidden", p.dataset.panel !== target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
