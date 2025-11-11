@@ -78,5 +78,442 @@
       border-radius: 999px;
       background: linear-gradient(120deg, #eef2ff, #dbeafe);
       border: 1px solid #c7d2fe;
-      font
+      font-size: 12px;
+      color: #1d4ed8;
+      width: fit-content;
+      margin-top: 4px;
+    }
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #2563eb;
+    }
+
+    /* SUMMARY CARDS */
+    .grid-top {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 900px) {
+      .grid-top { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .card-main {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .card-sub {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 11px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    /* CLASS ROLE CARDS */
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .role-grid { grid-template-columns: 1fr; }
+    }
+
+    .role-card {
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      cursor: pointer;
+      transition: border-color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.18s ease-out;
+    }
+
+    .role-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+      transform: translateY(-1px);
+    }
+
+    .role-card.active {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .role-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .role-text {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* DETAIL PANEL */
+    .panel {
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 20px;
+    }
+
+    .panel-header {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .panel-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .panel-caption {
+      font-size: 14px;
+      color: var(--text-sub);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 10px;
+    }
+
+    .chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .chip-strong {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      font-weight: 500;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    ul.list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    ul.list li + li { margin-top: 4px; }
+
+    .item-label {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .item-role {
+      display: block;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    .hidden { display: none; }
+
+    footer {
+      margin-top: 22px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      font-size: 11px;
+      color: var(--text-sub);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    footer strong { color: var(--text-main); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="eyebrow">FREYAX · TRADEMARK CLASSES 9 · 42 · 44</div>
+      <h1>상표 지정상품 요약 리포트</h1>
+      <p class="subtitle">
+        FreyaX 브랜드를 기준으로, <strong>스마트밴드·앱(제 9류)</strong>, 
+        <strong>데이터·알고리즘 플랫폼(제 42류)</strong>, 
+        <strong>임신 준비 웰니스 서비스(제 44류)</strong>를 어떻게 보호할지 한 눈에 볼 수 있도록 정리했습니다.
+      </p>
+      <div class="meta">
+        <span>Brand: <strong>FreyaX</strong></span>
+        <span>Scope: Device · Data · Wellness</span>
+        <span>Use: 내부 의사결정용 요약장</span>
+      </div>
+      <div class="pill">
+        <span class="pill-dot"></span>
+        <span>핵심만 모은 요약 리포트 · GitHub Pages / Notion 임베드용</span>
+      </div>
+    </header>
+
+    <!-- SUMMARY CARDS -->
+    <section class="grid-top">
+      <article class="card">
+        <div class="card-title">
+          출원 구조
+          <span class="badge">2개 상표 · 3개 상품류</span>
+        </div>
+        <div class="card-main">FreyaX + 후보 1개</div>
+        <p class="card-sub">
+          FreyaX는 <strong>고정 출원</strong>, 나머지 후보 1개만 추가 출원하는 구조를 가정합니다.<br />
+          각 상표는 제 <strong>9류 · 42류 · 44류</strong>에 동시 출원해 서비스 전체를 한 세트로 보호합니다.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-title">
+          레이어별 역할
+          <span class="badge">9 / 42 / 44 클래스</span>
+        </div>
+        <div class="card-main">Device → Data → Service</div>
+        <p class="card-sub">
+          · <strong>9류</strong> : 앱·스마트밴드 같은 <strong>실제 제품</strong><br/>
+          · <strong>42류</strong> : 예측·분석을 수행하는 <strong>데이터·플랫폼</strong><br/>
+          · <strong>44류</strong> : 사용자에게 보이는 <strong>웰니스 코칭·정보 서비스</strong>
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-title">
+          포지셔닝 원칙
+          <span class="badge">Non-medical</span>
+        </div>
+        <div class="card-main">“의료 진단/치료 표현은 제외”</div>
+        <p class="card-sub">
+          42류·44류는 <strong>비의료 목적 웰니스</strong>에 초점을 맞춰, 
+          “진단·치료·처방”과 같이 의료행위로 오해될 수 있는 단어는 피해서 작성합니다.
+        </p>
+      </article>
+    </section>
+
+    <!-- CLASS ROLE CARDS -->
+    <section class="role-grid">
+      <article class="role-card active" data-target="class9">
+        <div class="role-label">제 9류</div>
+        <div class="role-title">앱 · 스마트밴드 · 센서 디바이스</div>
+        <p class="role-text">
+          사용자가 실제로 사용하는 FreyaX <strong>모바일 앱과 웨어러블 하드웨어</strong>를 보호하는 레이어입니다.
+        </p>
+      </article>
+
+      <article class="role-card" data-target="class42">
+        <div class="role-label">제 42류</div>
+        <div class="role-title">데이터 · 알고리즘 · SaaS</div>
+        <p class="role-text">
+          생리/배란 예측, 패턴 분석 등 <strong>클라우드 기반 소프트웨어·플랫폼</strong>을 보호합니다.
+        </p>
+      </article>
+
+      <article class="role-card" data-target="class44">
+        <div class="role-label">제 44류</div>
+        <div class="role-title">임신 준비 · 웰니스 서비스</div>
+        <p class="role-text">
+          사용자가 받게 되는 <strong>생활습관 코칭·정보 제공</strong>과 같은 비의료 웰니스 서비스를 보호합니다.
+        </p>
+      </article>
+    </section>
+
+    <!-- DETAIL PANEL -->
+    <section class="panel">
+      <!-- CLASS 9 -->
+      <div class="panel-header" data-panel="class9">
+        <div class="panel-title">제 9류 – FreyaX 디바이스 · 앱</div>
+        <div class="panel-caption">
+          FreyaX 앱과 스마트밴드, 그리고 이들이 수집하는 건강 데이터를 다루는 <strong>실제 제품 레이어</strong>입니다.
+        </div>
+      </div>
+      <div class="panel-header hidden" data-panel="class42">
+        <div class="panel-title">제 42류 – 데이터 · 알고리즘 플랫폼</div>
+        <div class="panel-caption">
+          배란 예측·패턴 분석 로직과 데이터 파이프라인을 포함한 <strong>서버·SaaS 레이어</strong>입니다.
+        </div>
+      </div>
+      <div class="panel-header hidden" data-panel="class44">
+        <div class="panel-title">제 44류 – 임신 준비 웰니스 서비스</div>
+        <div class="panel-caption">
+          임신 준비 중 사용자를 대상으로 하는 <strong>정보 제공·생활습관 코칭</strong> 중심의 서비스 레이어입니다.
+        </div>
+      </div>
+
+      <div class="chip-row" data-panel="class9">
+        <span class="chip chip-strong">다운로드 가능한 생리·배란 관리 앱</span>
+        <span class="chip chip-strong">수면·스트레스·활동 측정 스마트밴드</span>
+        <span class="chip">심박수·피부온도 센서</span>
+        <span class="chip">블루투스 건강 모니터링 기기</span>
+      </div>
+      <div class="chip-row hidden" data-panel="class42">
+        <span class="chip chip-strong">온라인 비다운로드 소프트웨어</span>
+        <span class="chip chip-strong">헬스 데이터 분석 SaaS</span>
+        <span class="chip">AI 기반 패턴 분석</span>
+        <span class="chip">웨어러블 데이터 플랫폼</span>
+      </div>
+      <div class="chip-row hidden" data-panel="class44">
+        <span class="chip chip-strong">임신 준비·가임력 웰니스 정보</span>
+        <span class="chip chip-strong">생리·배란 기반 생활습관 코칭</span>
+        <span class="chip">수면·스트레스 기반 생활 가이드</span>
+        <span class="chip">모바일 앱 기반 비의료 건강관리</span>
+      </div>
+
+      <p class="note" data-panel="class9">
+        제 9류에서는 FreyaX를 <strong>“가임력 준비를 위한 앱 + 웨어러블 디바이스 세트”</strong>로 보이게 하는 것이 핵심입니다.
+        하드웨어와 다운로드 가능한 소프트웨어를 함께 잡아, 제품 축을 단단히 보호합니다.
+      </p>
+      <p class="note hidden" data-panel="class42">
+        제 42류는 FreyaX의 <strong>두뇌에 해당하는 부분</strong>입니다. 
+        예측·분석·알고리즘·API 등 눈에는 안 보이지만 서비스 가치의 핵심이 되는 영역을 포괄합니다.
+      </p>
+      <p class="note hidden" data-panel="class44">
+        제 44류는 사용자 입장에서 보이는 <strong>“코칭과 정보 제공”</strong> 영역입니다.
+        의료행위가 아니라 <strong>생활습관·웰니스 중심</strong>이라는 점을 표현으로 분명히 해두는 게 포인트입니다.
+      </p>
+
+      <ul class="list" data-panel="class9">
+        <li>
+          <span class="item-label">생리·배란 관리 앱</span>
+          <span class="item-role">“생리 주기 및 배란일 관리용 모바일 애플리케이션(다운로드 가능 소프트웨어)”</span>
+        </li>
+        <li>
+          <span class="item-label">웨어러블 스마트밴드</span>
+          <span class="item-role">“수면·스트레스·활동량 측정을 위한 웨어러블 스마트밴드”</span>
+        </li>
+        <li>
+          <span class="item-label">센서·연동 소프트웨어</span>
+          <span class="item-role">“웨어러블 건강데이터 수집·시각화를 위한 소프트웨어 및 블루투스 건강 모니터링 디바이스”</span>
+        </li>
+      </ul>
+
+      <ul class="list hidden" data-panel="class42">
+        <li>
+          <span class="item-label">배란 예측 엔진</span>
+          <span class="item-role">“생리 주기 및 배란일 예측을 위한 온라인 비다운로드 소프트웨어 제공업”</span>
+        </li>
+        <li>
+          <span class="item-label">헬스 데이터 SaaS</span>
+          <span class="item-role">“개인 건강 데이터 분석용 소프트웨어 as a service(SaaS) 제공업”</span>
+        </li>
+        <li>
+          <span class="item-label">AI·플랫폼 레이어</span>
+          <span class="item-role">“웨어러블 생체 신호 데이터 분석 플랫폼 및 의료 진단을 제외한 AI 기반 패턴 분석 서비스”</span>
+        </li>
+      </ul>
+
+      <ul class="list hidden" data-panel="class44">
+        <li>
+          <span class="item-label">가임력 웰니스 정보</span>
+          <span class="item-role">“임신 준비 및 가임력 관리에 관한 건강·웰니스 정보 제공 서비스(의료 진단 제외)”</span>
+        </li>
+        <li>
+          <span class="item-label">주기 기반 코칭</span>
+          <span class="item-role">“생리·배란 주기에 기반한 생활습관 관리 및 컨디션 코칭 서비스”</span>
+        </li>
+        <li>
+          <span class="item-label">생활습관 가이드</span>
+          <span class="item-role">“수면·스트레스·활동량 데이터를 활용한 생활습관 개선 가이드 및 모바일 기반 비의료 웰니스 코칭 서비스”</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Note.</strong> 이 문서는 FreyaX 서비스 구조를 기준으로 작성한 <strong>기획 초안</strong>입니다.  
+        실제 출원 시에는 특허법인의 고시명칭·리스크 검토 결과에 따라 문구를 조정해야 합니다.
+      </div>
+      <div>
+        <strong>Usage.</strong> GitHub Pages에 업로드 후 노션에 임베드해, 
+        상표 전략 회의나 투자자 설명용 레퍼런스로 사용할 수 있습니다.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const roleCards = document.querySelectorAll(".role-card");
+    const panelBlocks = document.querySelectorAll("[data-panel]");
+
+    function showPanel(target) {
+      panelBlocks.forEach((el) => {
+        el.classList.toggle("hidden", el.getAttribute("data-panel") !== target);
+      });
+    }
+
+    roleCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const target = card.getAttribute("data-target");
+
+        roleCards.forEach((c) => c.classList.remove("active"));
+        card.classList.add("active");
+
+        showPanel(target);
+
+        if (window.innerWidth < 768) {
+          const rect = card.getBoundingClientRect();
+          window.scrollTo({
+            top: window.scrollY + rect.top - 80,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
 
