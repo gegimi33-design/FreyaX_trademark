@@ -4,104 +4,86 @@
   <meta charset="UTF-8" />
   <title>FreyaX 상표 지정상품 요약 리포트</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Pretendard 폰트 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
   <style>
     :root {
-      --bg: #020617;
-      --card-bg: #0b1220;
-      --card-soft: #020617;
-      --accent: #22c55e;   /* 초록 포인트 */
+      --bg: #010414;
+      --card-bg: #0a1120;
+      --accent: #22c55e;
       --accent-warn: #fbbf24;
       --accent-bad: #f97316;
-      --text-main: #f9fafb;
-      --text-sub: #9ca3af;
+      --text-main: #ffffff;
+      --text-sub: #e5e7eb;
       --border: #1e293b;
       --radius: 18px;
-      --shadow: 0 20px 50px rgba(15, 23, 42, 0.65);
-      --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.5);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.9);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       padding: 40px 20px 60px;
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #020617 100%);
+      background: radial-gradient(circle at top, #0b132b 0%, #010414 70%, #000 100%);
       color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
     }
 
-    .page {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .page { max-width: 1100px; margin: 0 auto; }
 
-    header {
-      text-align: left;
-      margin-bottom: 32px;
-    }
+    header { text-align: left; margin-bottom: 36px; }
 
     .eyebrow {
-      font-size: 13px;
+      font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #4ade80;
-      font-weight: 600;
-      margin-bottom: 4px;
+      color: var(--accent);
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(34,197,94,0.5);
     }
 
     h1 {
-      margin: 0 0 8px 0;
-      font-size: 32px;
-      font-weight: 700;
-      color: #f9fafb;
+      margin: 8px 0 10px;
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text-main);
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
     }
 
     .subtitle {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-sub);
-      max-width: 700px;
+      max-width: 740px;
     }
 
     /* TOP CARDS */
     .grid-top {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin: 32px 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 36px 0;
     }
 
     .card {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), var(--card-bg));
+      background: rgba(11,18,32,0.9);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      padding: 20px 24px;
+      padding: 22px 26px;
       transition: all 0.25s ease;
-    }
-
-    .card:nth-child(2) {
-      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.16), var(--card-bg));
-    }
-
-    .card:nth-child(3) {
-      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), var(--card-bg));
     }
 
     .card:hover {
       transform: translateY(-3px);
-      box-shadow: var(--shadow-soft);
-      border-color: #38bdf8;
+      border-color: var(--accent);
+      box-shadow: var(--shadow-hover);
     }
 
     .card-title {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text-sub);
       margin-bottom: 6px;
@@ -109,88 +91,87 @@
 
     .card-main {
       font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 6px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-shadow: 0 0 8px rgba(34,197,94,0.5);
     }
 
-    .card:nth-child(1) .card-main { color: var(--accent-bad); }
-    .card:nth-child(2) .card-main { color: var(--accent-warn); }
-    .card:nth-child(3) .card-main { color: var(--accent); }
-
     .card-sub {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-sub);
     }
 
-    /* ROLE CARDS (탭 버튼) */
+    /* ROLE CARDS */
     .role-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 14px;
+      margin-bottom: 24px;
     }
 
     .role-card {
-      flex: 1 1 32%;
-      background: linear-gradient(135deg, #020617, #020617);
+      flex: 1 1 30%;
+      background: rgba(17,24,39,0.8);
       border-radius: 14px;
-      border: 1px solid #1f2937;
-      padding: 14px 18px;
+      border: 1px solid #334155;
+      padding: 16px 20px;
       cursor: pointer;
       transition: all 0.25s ease;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
     }
 
     .role-card:hover {
-      border-color: #38bdf8;
+      border-color: var(--accent);
       transform: translateY(-2px);
+      box-shadow: 0 0 14px rgba(34,197,94,0.5);
     }
 
     .role-card.active {
-      border-color: #4ade80;
-      box-shadow: 0 16px 35px rgba(34, 197, 94, 0.35);
-      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), #020617);
+      background: rgba(34,197,94,0.12);
+      border-color: var(--accent);
+      box-shadow: 0 0 18px rgba(34,197,94,0.55);
     }
 
     .role-label {
       font-size: 13px;
-      color: #a5b4fc;
-      font-weight: 600;
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .role-title {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
       margin: 4px 0;
-      color: #e5e7eb;
+      text-shadow: 0 0 6px rgba(255,255,255,0.5);
     }
 
     .role-text {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-sub);
     }
 
     /* DETAIL PANEL */
     .panel {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), #020617);
+      background: rgba(11,18,32,0.95);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      padding: 24px;
+      padding: 26px;
+      transition: all 0.3s ease;
     }
 
-    .panel-header {
-      margin-bottom: 12px;
-    }
+    .panel-header { margin-bottom: 14px; }
 
     .panel-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #e5e7eb;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
 
     .panel-caption {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-sub);
     }
 
@@ -198,28 +179,21 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 12px 0;
+      margin: 14px 0;
     }
 
     .chip {
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-      font-size: 12px;
-    }
-
-    .chip-row[data-panel="class9"] .chip:nth-child(1),
-    .chip-row[data-panel="class42"] .chip:nth-child(1),
-    .chip-row[data-panel="class44"] .chip:nth-child(1) {
-      border-color: #4ade80;
-      color: #bbf7d0;
-      background: rgba(22, 163, 74, 0.22);
+      border: 1px solid var(--accent);
+      background: rgba(34,197,94,0.1);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .note {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-sub);
       margin-bottom: 12px;
     }
@@ -232,52 +206,45 @@
 
     ul.list li {
       padding: 10px 0;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      border-bottom: 1px solid #1e293b;
     }
 
     .item-label {
       font-size: 15px;
-      font-weight: 600;
-      color: #e5e7eb;
+      font-weight: 700;
+      color: var(--text-main);
+      text-shadow: 0 0 6px rgba(255,255,255,0.5);
     }
 
     .item-role {
       display: block;
       font-size: 13px;
       color: var(--text-sub);
-      margin-top: 2px;
     }
 
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
 
     footer {
-      margin-top: 36px;
+      margin-top: 40px;
       font-size: 12px;
       color: var(--text-sub);
       text-align: center;
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      padding-top: 10px;
+      border-top: 1px solid #334155;
+      padding-top: 12px;
     }
 
     footer strong {
-      color: #e5e7eb;
+      color: var(--text-main);
+      text-shadow: 0 0 5px rgba(255,255,255,0.4);
     }
 
     @media (max-width: 900px) {
-      body {
-        padding: 24px 14px 40px;
-      }
-      .role-card {
-        flex: 1 1 100%;
-      }
+      .role-card { flex: 1 1 100%; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- HEADER -->
     <header>
       <div class="eyebrow">FREYAX · TRADEMARK CLASSES 9 · 42 · 44</div>
       <h1>상표 지정상품 요약 리포트</h1>
@@ -288,7 +255,6 @@
       </p>
     </header>
 
-    <!-- TOP SUMMARY CARDS -->
     <section class="grid-top">
       <article class="card">
         <div class="card-title">출원 구조</div>
@@ -317,7 +283,6 @@
       </article>
     </section>
 
-    <!-- ROLE CARDS (TABS) -->
     <section class="role-grid">
       <article class="role-card active" data-target="class9">
         <div class="role-label">제 9류</div>
@@ -336,26 +301,18 @@
       </article>
     </section>
 
-    <!-- DETAIL PANEL -->
     <section class="panel">
-      <!-- CLASS 9 -->
       <div class="panel-header" data-panel="class9">
         <div class="panel-title">제 9류 – FreyaX 디바이스 · 앱</div>
-        <div class="panel-caption">
-          FreyaX를 “가임력 준비용 앱 + 웨어러블 디바이스 세트”로 정의하는 레이어입니다.
-        </div>
+        <div class="panel-caption">FreyaX를 “가임력 준비용 앱 + 웨어러블 디바이스 세트”로 정의하는 레이어입니다.</div>
       </div>
       <div class="panel-header hidden" data-panel="class42">
         <div class="panel-title">제 42류 – 데이터 · 알고리즘 플랫폼</div>
-        <div class="panel-caption">
-          예측·분석 로직, 헬스 데이터 분석 SaaS, API 플랫폼 등을 포함하는 서버 측 레이어입니다.
-        </div>
+        <div class="panel-caption">예측·분석 로직, 헬스 데이터 분석 SaaS, API 플랫폼 등을 포함하는 서버 측 레이어입니다.</div>
       </div>
       <div class="panel-header hidden" data-panel="class44">
         <div class="panel-title">제 44류 – 임신 준비 웰니스 서비스</div>
-        <div class="panel-caption">
-          임신 준비 중 사용자를 위한 정보 제공·생활습관 코칭 등 눈에 보이는 서비스 레이어입니다.
-        </div>
+        <div class="panel-caption">임신 준비 중 사용자를 위한 정보 제공·생활습관 코칭 등 눈에 보이는 서비스 레이어입니다.</div>
       </div>
 
       <div class="chip-row" data-panel="class9">
@@ -374,85 +331,44 @@
         <span class="chip">모바일 기반 비의료 건강관리</span>
       </div>
 
-      <p class="note" data-panel="class9">
-        · FreyaX 앱과 디바이스라는 “제품 축”을 확실히 잡아주는 것이 목적입니다.<br />
-        · 디바이스 형태가 바뀌어도 커버할 수 있도록 센서·스마트 디바이스 상위 개념을 함께 포함합니다.
-      </p>
-      <p class="note hidden" data-panel="class42">
-        · 실제 비즈니스 가치의 대부분이 모이는 예측·분석 로직을 이 레이어에서 보호합니다.<br />
-        · “의료 진단”이 아닌 데이터 처리·분석 서비스라는 점을 표현에서 명확히 합니다.
-      </p>
-      <p class="note hidden" data-panel="class44">
-        · 사용자가 느끼는 FreyaX의 경험(코칭·정보 제공)을 서비스 관점에서 보호합니다.<br />
-        · 의료행위가 아니라 생활습관·웰니스 관리라는 포지션을 유지하는 것이 핵심입니다.
-      </p>
-
       <ul class="list" data-panel="class9">
-        <li>
-          <span class="item-label">생리·배란 관리 앱</span>
-          <span class="item-role">“생리 주기 및 배란일 관리용 모바일 애플리케이션(다운로드 가능 소프트웨어)”</span>
-        </li>
-        <li>
-          <span class="item-label">웨어러블 스마트밴드</span>
-          <span class="item-role">“수면·스트레스·활동량 측정을 위한 웨어러블 스마트밴드 및 전자식 착용형 기기”</span>
-        </li>
+        <li><span class="item-label">생리·배란 관리 앱</span>
+            <span class="item-role">“생리 주기 및 배란일 관리용 모바일 앱(다운로드 가능)”</span></li>
+        <li><span class="item-label">웨어러블 디바이스</span>
+            <span class="item-role">“활동량·수면·스트레스 측정을 위한 스마트밴드 및 전자기기”</span></li>
       </ul>
 
       <ul class="list hidden" data-panel="class42">
-        <li>
-          <span class="item-label">배란 예측 엔진</span>
-          <span class="item-role">“생리 주기 및 배란일 예측을 위한 온라인 비다운로드 소프트웨어 제공업”</span>
-        </li>
-        <li>
-          <span class="item-label">헬스 데이터 SaaS</span>
-          <span class="item-role">“개인 건강 데이터 분석용 소프트웨어 as a service(SaaS) 제공업”</span>
-        </li>
+        <li><span class="item-label">배란 예측 엔진</span>
+            <span class="item-role">“생리 주기 및 배란일 예측을 위한 온라인 소프트웨어 제공업”</span></li>
+        <li><span class="item-label">헬스 데이터 SaaS</span>
+            <span class="item-role">“건강 데이터 분석용 SaaS 및 AI 알고리즘 플랫폼”</span></li>
       </ul>
 
       <ul class="list hidden" data-panel="class44">
-        <li>
-          <span class="item-label">가임력 웰니스 정보</span>
-          <span class="item-role">“임신 준비 및 가임력 관리에 관한 건강·웰니스 정보 제공 서비스(의료 진단 제외)”</span>
-        </li>
-        <li>
-          <span class="item-label">생활습관 코칭</span>
-          <span class="item-role">“생리·배란 주기에 기반한 생활습관 관리 및 컨디션 코칭 서비스”</span>
-        </li>
+        <li><span class="item-label">가임력 웰니스 정보</span>
+            <span class="item-role">“임신 준비 및 웰니스 정보 제공 서비스(비의료)”</span></li>
+        <li><span class="item-label">생활습관 코칭</span>
+            <span class="item-role">“배란 주기 기반 생활습관 코칭 및 컨디션 관리 서비스”</span></li>
       </ul>
     </section>
 
     <footer>
-      <p>
-        <strong>Note.</strong> 본 문서는 FreyaX 상표 전략 기획용 초안이며, 실제 출원 시 특허법인의 고시명칭·리스크 검토에 따라 조정될 수 있습니다.
-      </p>
+      <p><strong>Note.</strong> 본 문서는 FreyaX 상표 전략 기획용 초안이며, 실제 출원 시 특허법인 검토에 따라 문구가 조정될 수 있습니다.</p>
     </footer>
   </div>
 
   <script>
     const roleCards = document.querySelectorAll(".role-card");
-    const panelBlocks = document.querySelectorAll("[data-panel]");
-
-    function showPanel(target) {
-      panelBlocks.forEach((el) => {
-        el.classList.toggle("hidden", el.getAttribute("data-panel") !== target);
-      });
-    }
-
-    roleCards.forEach((card) => {
+    const panels = document.querySelectorAll("[data-panel]");
+    roleCards.forEach(card => {
       card.addEventListener("click", () => {
         const target = card.dataset.target;
-        roleCards.forEach((c) => c.classList.remove("active"));
+        roleCards.forEach(c => c.classList.remove("active"));
         card.classList.add("active");
-        showPanel(target);
-
-        // 모바일에서 살짝 위로 스크롤
-        if (window.innerWidth < 768) {
-          const rect = card.getBoundingClientRect();
-          window.scrollTo({
-            top: window.scrollY + rect.top - 80,
-            behavior: "smooth",
-          });
-        }
+        panels.forEach(p => {
+          p.classList.toggle("hidden", p.dataset.panel !== target);
+        });
       });
     });
   </script>
